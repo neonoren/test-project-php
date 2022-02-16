@@ -1,22 +1,15 @@
 <?php
 
-class Database
-{
+$id = $_GET['id'];
 
-    function connect(){
-        return mysqli_connect('localhost', 'root', '', 'phpfact');
-    }
-    function get($query){
-        $connect = $this->connect();
-        $result = mysqli_query($connect, $query);
-        return mysqli_fetch_all($result);
-    }
-}
-$id = $_POST['id'];
-$database = new Database();
-$query = 'DELETE FROM users where id = '.$id;
-$users = $database->get($query);
+$connect = mysqli_connect('localhost', 'root', '', 'phpfact');
+
+$query = "INSERT INTO users (firstname, lastname) VALUE ('$firstname', '$lastname')";
+
+$result = mysqli_query($connect,$query);
+
+mysqli_close($connect);
 
 ?>
 
-<meta http-equiv="refresh" content="1"; url="index.php">
+<meta http-equiv="refresh" content="1; url=index.php">
