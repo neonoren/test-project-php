@@ -15,11 +15,19 @@ $fetch = mysqli_fetch_all($result);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
+    <link rel="stylesheet" href="/bootstrap.min.css">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Тестовое задание</title>
 </head>
 <body>
 <h1>Пользователи</h1>
+
+<h3>Добавить пользователя</h3>
+<form action="insert.php" method="post">
+    <input type="text" name="firstname">
+    <input type="text" name="lastname">
+    <input type="submit" value="Добавить">
+</form>
 
 <?php
 
@@ -33,13 +41,5 @@ foreach ($fetch as $key => $value){
 }
 
 ?>
-
-<h3>Добавить пользователя</h3>
-<form action="insert.php" method="post">
-    <input type="text" name="firstname">
-    <input type="text" name="lastname">
-    <input type="submit" value="Добавить">
-</form>
-
 </body>
 </html>
