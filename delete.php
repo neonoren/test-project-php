@@ -1,10 +1,10 @@
 <?php
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $connect = mysqli_connect('localhost', 'root', '', 'phpfact');
 
-$query = "INSERT INTO users (firstname, lastname) VALUE ('$firstname', '$lastname')";
+$query = 'DELETE FROM users where id = '.$id;
 
 $result = mysqli_query($connect,$query);
 

@@ -22,11 +22,18 @@ $fetch = mysqli_fetch_all($result);
 <h1>Пользователи</h1>
 
 <?php
-foreach ($fetch as $key => $user){
-    echo "<ul><b>$user[1] $user[2]</b>";
-    echo "</ul>";
+
+foreach ($fetch as $key => $value){
+    echo '<a href="delete.php?id='.$value[0].'"> '.$value[1]. ' ' .$value[2].'</a>
+        <form action="delete.php" method="post">
+        <input type="hidden" name="id" value="'.$value[0].'">
+        <input type="submit" value="Удалить">
+        </form>
+</br>';
 }
+
 ?>
+
 <h3>Добавить пользователя</h3>
 <form action="insert.php" method="post">
     <input type="text" name="firstname">
